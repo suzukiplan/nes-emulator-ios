@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7423A0EC20386CAB000E2AB5 /* NESView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7423A0EA20386CAB000E2AB5 /* NESView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7423A0F620387069000E2AB5 /* emulator in Resources */ = {isa = PBXBuildFile; fileRef = 7423A0F520387069000E2AB5 /* emulator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7423A0E720386CAB000E2AB5 /* NESView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NESView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7423A0EA20386CAB000E2AB5 /* NESView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NESView.h; sourceTree = "<group>"; };
 		7423A0EB20386CAB000E2AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7423A0F520387069000E2AB5 /* emulator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = emulator; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		7423A0E920386CAB000E2AB5 /* NESView */ = {
 			isa = PBXGroup;
 			children = (
+				7423A0F520387069000E2AB5 /* emulator */,
 				7423A0EA20386CAB000E2AB5 /* NESView.h */,
 				7423A0EB20386CAB000E2AB5 /* Info.plist */,
 			);
@@ -121,6 +124,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7423A0F620387069000E2AB5 /* emulator in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
