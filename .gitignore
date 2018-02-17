@@ -1,0 +1,13 @@
+## Various settings
+xcuserdata
+
+## CocoaPods
+Podfile.lock
+Pods
+
+## Other
+.DS_Store
+*.swp
+*.xcuserstate
+*.xcworkspace
+
