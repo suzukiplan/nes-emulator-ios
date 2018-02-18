@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		7423A0EC20386CAB000E2AB5 /* NESView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7423A0EA20386CAB000E2AB5 /* NESView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7423A0F620387069000E2AB5 /* emulator in Resources */ = {isa = PBXBuildFile; fileRef = 7423A0F520387069000E2AB5 /* emulator */; };
+		7423A0F820387111000E2AB5 /* NESView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7423A0F720387111000E2AB5 /* NESView.m */; };
+		7423A0FE203874AF000E2AB5 /* NESKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 7423A0FC203874AF000E2AB5 /* NESKey.h */; };
+		7423A0FF203874AF000E2AB5 /* NESKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 7423A0FD203874AF000E2AB5 /* NESKey.m */; };
+		7423A102203874CD000E2AB5 /* NESPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7423A100203874CD000E2AB5 /* NESPlayer.h */; };
+		7423A103203874CD000E2AB5 /* NESPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7423A101203874CD000E2AB5 /* NESPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +21,11 @@
 		7423A0EA20386CAB000E2AB5 /* NESView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NESView.h; sourceTree = "<group>"; };
 		7423A0EB20386CAB000E2AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7423A0F520387069000E2AB5 /* emulator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = emulator; sourceTree = "<group>"; };
+		7423A0F720387111000E2AB5 /* NESView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NESView.m; sourceTree = "<group>"; };
+		7423A0FC203874AF000E2AB5 /* NESKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NESKey.h; sourceTree = "<group>"; };
+		7423A0FD203874AF000E2AB5 /* NESKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NESKey.m; sourceTree = "<group>"; };
+		7423A100203874CD000E2AB5 /* NESPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NESPlayer.h; sourceTree = "<group>"; };
+		7423A101203874CD000E2AB5 /* NESPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NESPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +60,11 @@
 			children = (
 				7423A0F520387069000E2AB5 /* emulator */,
 				7423A0EA20386CAB000E2AB5 /* NESView.h */,
+				7423A0F720387111000E2AB5 /* NESView.m */,
+				7423A0FC203874AF000E2AB5 /* NESKey.h */,
+				7423A0FD203874AF000E2AB5 /* NESKey.m */,
+				7423A100203874CD000E2AB5 /* NESPlayer.h */,
+				7423A101203874CD000E2AB5 /* NESPlayer.m */,
 				7423A0EB20386CAB000E2AB5 /* Info.plist */,
 			);
 			path = NESView;
@@ -63,6 +78,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7423A0EC20386CAB000E2AB5 /* NESView.h in Headers */,
+				7423A0FE203874AF000E2AB5 /* NESKey.h in Headers */,
+				7423A102203874CD000E2AB5 /* NESPlayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7423A0FF203874AF000E2AB5 /* NESKey.m in Sources */,
+				7423A0F820387111000E2AB5 /* NESView.m in Sources */,
+				7423A103203874CD000E2AB5 /* NESPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +282,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NESView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suzukiplan.NESView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -281,6 +302,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NESView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suzukiplan.NESView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

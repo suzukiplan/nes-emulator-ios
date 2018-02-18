@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <NESView/NESKey.h>
 
 //! Project version number for NESView.
 FOUNDATION_EXPORT double NESViewVersionNumber;
@@ -14,6 +15,12 @@ FOUNDATION_EXPORT double NESViewVersionNumber;
 //! Project version string for NESView.
 FOUNDATION_EXPORT const unsigned char NESViewVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <NESView/PublicHeader.h>
+NS_ASSUME_NONNULL_BEGIN
 
+@interface NESView : UIView
+- (BOOL)loadRom:(NSData*)rom;
+- (void)tick:(NESKey*)key;
+- (void)ticks:(NSArray<NESKey*>*)keys;
+@end
 
+NS_ASSUME_NONNULL_END
