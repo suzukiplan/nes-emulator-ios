@@ -17,7 +17,14 @@ FOUNDATION_EXPORT const unsigned char NESViewVersionString[];
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class NESView;
+
+@protocol NESViewDelegate <NSObject>
+- (void)nesView:(NESView*)nesView didDetectVsyncWithFrameCount:(NSInteger)frameCount;
+@end
+
 @interface NESView : UIView
+@property (nonatomic, weak) id<NESViewDelegate> delegate;
 - (BOOL)loadRom:(NSData*)rom;
 - (void)tick:(NESKey*)key;
 - (void)ticks:(NSArray<NESKey*>*)keys;
