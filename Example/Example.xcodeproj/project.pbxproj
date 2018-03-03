@@ -16,6 +16,7 @@
 		74A429FE204A8E3C00B06B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A429FC204A8E3C00B06B4B /* LaunchScreen.storyboard */; };
 		74A42A01204A8E3C00B06B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A42A00204A8E3C00B06B4B /* main.m */; };
 		74A42A08204A956500B06B4B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A42A07204A956500B06B4B /* libc++.tbd */; };
+		74A42A0A204B6C1D00B06B4B /* example.nes in Resources */ = {isa = PBXBuildFile; fileRef = 74A42A09204B66FE00B06B4B /* example.nes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		74A429FF204A8E3C00B06B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A42A00204A8E3C00B06B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		74A42A07204A956500B06B4B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		74A42A09204B66FE00B06B4B /* example.nes */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.nes; sourceTree = "<group>"; };
 		F5BF3CBFD38791253E054E94 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 		74A429ED204A8E3C00B06B4B /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				74A42A09204B66FE00B06B4B /* example.nes */,
 				74A429EE204A8E3C00B06B4B /* AppDelegate.h */,
 				74A429EF204A8E3C00B06B4B /* AppDelegate.m */,
 				74A429F1204A8E3C00B06B4B /* ViewController.h */,
@@ -166,6 +169,7 @@
 				74A429FE204A8E3C00B06B4B /* LaunchScreen.storyboard in Resources */,
 				74A429FB204A8E3C00B06B4B /* Assets.xcassets in Resources */,
 				74A429F6204A8E3C00B06B4B /* Main.storyboard in Resources */,
+				74A42A0A204B6C1D00B06B4B /* example.nes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

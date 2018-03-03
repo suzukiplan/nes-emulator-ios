@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)tick:(NESKey*)key;
 - (void)ticks:(NSArray<NESKey*>*)keys;
 - (void)reset;
+- (void)destroy;
 @end
 
 NS_ASSUME_NONNULL_END

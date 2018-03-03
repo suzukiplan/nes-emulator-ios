@@ -14,4 +14,5 @@
 - (unsigned short*)getVram;
 - (void)lockVram;
 - (void)unlockVram;
+- (void)drawFrame;
 @end

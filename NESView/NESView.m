@@ -58,7 +58,7 @@
 
 - (void)_detectVsync
 {
-    [self setNeedsDisplay];
+    [(NESLayer*)self.layer drawFrame];
     [_delegate nesView:self didDetectVsyncWithFrameCount:_frameCount];
 }
 
@@ -82,7 +82,10 @@
 
 - (BOOL)loadRom:(NSData*)rom
 {
-    NSLog(@"loading rom: size = %lud", rom.length);
+    NSLog(@"loading rom: size = %lu", rom.length);
+    if (rom.length < 1) {
+        return NO;
+    }
     NESEmulator_loadRom(_context, rom.bytes, rom.length);
     _frameCount = 0;
     return YES;

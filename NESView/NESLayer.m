@@ -60,7 +60,7 @@
     pthread_mutex_unlock(&_mutex);
 }
 
-- (void)display
+- (void)drawFrame
 {
     if (_destroyed)
         return;
