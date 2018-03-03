@@ -1,0 +1,5 @@
+framework module NESView {
+	header "NESView.h"
+	header "NESKey.h"
+	header "NESPlayer.h"
+}
