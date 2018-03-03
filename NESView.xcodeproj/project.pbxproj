@@ -8,24 +8,107 @@
 
 /* Begin PBXBuildFile section */
 		7423A0EC20386CAB000E2AB5 /* NESView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7423A0EA20386CAB000E2AB5 /* NESView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7423A0F620387069000E2AB5 /* emulator in Resources */ = {isa = PBXBuildFile; fileRef = 7423A0F520387069000E2AB5 /* emulator */; };
-		7423A0F820387111000E2AB5 /* NESView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7423A0F720387111000E2AB5 /* NESView.m */; };
 		7423A0FE203874AF000E2AB5 /* NESKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 7423A0FC203874AF000E2AB5 /* NESKey.h */; };
 		7423A0FF203874AF000E2AB5 /* NESKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 7423A0FD203874AF000E2AB5 /* NESKey.m */; };
 		7423A102203874CD000E2AB5 /* NESPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7423A100203874CD000E2AB5 /* NESPlayer.h */; };
 		7423A103203874CD000E2AB5 /* NESPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7423A101203874CD000E2AB5 /* NESPlayer.m */; };
+		9444F7C02043B796004293DE /* NESLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9444F7BE2043B796004293DE /* NESLayer.h */; };
+		9444F7C12043B796004293DE /* NESLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9444F7BF2043B796004293DE /* NESLayer.m */; };
+		9444F7C52043B7D9004293DE /* NESEmulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9444F7C32043B7D9004293DE /* NESEmulator.cpp */; };
+		9444F7C62043B7D9004293DE /* NESEmulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9444F7C42043B7D9004293DE /* NESEmulator.h */; };
+		948336A02046B23E000DE090 /* CGVideoFairy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9483369E2046B23E000DE090 /* CGVideoFairy.cpp */; };
+		948336A12046B23E000DE090 /* CGVideoFairy.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 9483369F2046B23E000DE090 /* CGVideoFairy.hpp */; };
+		948336A42046B267000DE090 /* ALAudioFairy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 948336A22046B267000DE090 /* ALAudioFairy.cpp */; };
+		948336A52046B267000DE090 /* ALAudioFairy.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 948336A32046B267000DE090 /* ALAudioFairy.hpp */; };
+		948336CC204A886B000DE090 /* NesFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 948336CA204A886B000DE090 /* NesFile.h */; };
+		948336CD204A886B000DE090 /* NesFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 948336CB204A886B000DE090 /* NesFile.cpp */; };
+		948336FB204A89AA000DE090 /* Processor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 948336F4204A89A9000DE090 /* Processor.cpp */; };
+		948336FC204A89AA000DE090 /* AudioChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 948336F5204A89A9000DE090 /* AudioChannel.h */; };
+		948336FD204A89AA000DE090 /* VirtualMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 948336F6204A89A9000DE090 /* VirtualMachine.cpp */; };
+		948336FE204A89AA000DE090 /* VirtualMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 948336F7204A89A9000DE090 /* VirtualMachine.h */; };
+		948336FF204A89AA000DE090 /* Cartridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 948336F8204A89AA000DE090 /* Cartridge.cpp */; };
+		94833700204A89AA000DE090 /* Video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 948336F9204A89AA000DE090 /* Video.cpp */; };
+		94833701204A89AA000DE090 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 948336FA204A89AA000DE090 /* Audio.cpp */; };
+		94833712204A89C9000DE090 /* Mapper0.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833702204A89C6000DE090 /* Mapper0.h */; };
+		94833713204A89C9000DE090 /* Mapper3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94833703204A89C6000DE090 /* Mapper3.cpp */; };
+		94833714204A89C9000DE090 /* Mapper4.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833704204A89C6000DE090 /* Mapper4.h */; };
+		94833715204A89C9000DE090 /* Mapper2.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833705204A89C6000DE090 /* Mapper2.h */; };
+		94833716204A89C9000DE090 /* Mapper0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94833706204A89C7000DE090 /* Mapper0.cpp */; };
+		94833717204A89C9000DE090 /* Mapper21.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833707204A89C7000DE090 /* Mapper21.h */; };
+		94833718204A89C9000DE090 /* Mapper3.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833708204A89C7000DE090 /* Mapper3.h */; };
+		94833719204A89C9000DE090 /* Mapper21.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94833709204A89C8000DE090 /* Mapper21.cpp */; };
+		9483371A204A89C9000DE090 /* Mapper1.h in Headers */ = {isa = PBXBuildFile; fileRef = 9483370A204A89C8000DE090 /* Mapper1.h */; };
+		9483371B204A89C9000DE090 /* Mapper23.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9483370B204A89C8000DE090 /* Mapper23.cpp */; };
+		9483371C204A89C9000DE090 /* Mapper23.h in Headers */ = {isa = PBXBuildFile; fileRef = 9483370C204A89C8000DE090 /* Mapper23.h */; };
+		9483371D204A89C9000DE090 /* Mapper25.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9483370D204A89C9000DE090 /* Mapper25.cpp */; };
+		9483371E204A89C9000DE090 /* Mapper4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9483370E204A89C9000DE090 /* Mapper4.cpp */; };
+		9483371F204A89C9000DE090 /* Mapper1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9483370F204A89C9000DE090 /* Mapper1.cpp */; };
+		94833720204A89C9000DE090 /* Mapper2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94833710204A89C9000DE090 /* Mapper2.cpp */; };
+		94833721204A89C9000DE090 /* Mapper25.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833711204A89C9000DE090 /* Mapper25.h */; };
+		94833724204A89D6000DE090 /* VRC4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94833722204A89D6000DE090 /* VRC4.cpp */; };
+		94833725204A89D6000DE090 /* VRC4.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833723204A89D6000DE090 /* VRC4.h */; };
+		9483372A204A89FA000DE090 /* VideoFairy.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833726204A89F9000DE090 /* VideoFairy.h */; };
+		9483372B204A89FA000DE090 /* GamepadFairy.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833727204A89F9000DE090 /* GamepadFairy.h */; };
+		9483372C204A89FA000DE090 /* AudioFairy.h in Headers */ = {isa = PBXBuildFile; fileRef = 94833728204A89F9000DE090 /* AudioFairy.h */; };
+		9483372D204A89FA000DE090 /* FairyConstantValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94833729204A89FA000DE090 /* FairyConstantValues.cpp */; };
+		94833730204A8A0D000DE090 /* EmulatorException.h in Headers */ = {isa = PBXBuildFile; fileRef = 9483372E204A8A0C000DE090 /* EmulatorException.h */; };
+		94833731204A8A0D000DE090 /* EmulatorException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9483372F204A8A0D000DE090 /* EmulatorException.cpp */; };
+		94833734204A8A4B000DE090 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94833733204A8A4A000DE090 /* OpenAL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7423A0E720386CAB000E2AB5 /* NESView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NESView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7423A0EA20386CAB000E2AB5 /* NESView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NESView.h; sourceTree = "<group>"; };
 		7423A0EB20386CAB000E2AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7423A0F520387069000E2AB5 /* emulator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = emulator; sourceTree = "<group>"; };
 		7423A0F720387111000E2AB5 /* NESView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NESView.m; sourceTree = "<group>"; };
 		7423A0FC203874AF000E2AB5 /* NESKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NESKey.h; sourceTree = "<group>"; };
 		7423A0FD203874AF000E2AB5 /* NESKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NESKey.m; sourceTree = "<group>"; };
 		7423A100203874CD000E2AB5 /* NESPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NESPlayer.h; sourceTree = "<group>"; };
 		7423A101203874CD000E2AB5 /* NESPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NESPlayer.m; sourceTree = "<group>"; };
+		9444F7BE2043B796004293DE /* NESLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NESLayer.h; sourceTree = "<group>"; };
+		9444F7BF2043B796004293DE /* NESLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NESLayer.m; sourceTree = "<group>"; };
+		9444F7C32043B7D9004293DE /* NESEmulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NESEmulator.cpp; sourceTree = "<group>"; };
+		9444F7C42043B7D9004293DE /* NESEmulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NESEmulator.h; sourceTree = "<group>"; };
+		9483369E2046B23E000DE090 /* CGVideoFairy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CGVideoFairy.cpp; sourceTree = "<group>"; };
+		9483369F2046B23E000DE090 /* CGVideoFairy.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGVideoFairy.hpp; sourceTree = "<group>"; };
+		948336A22046B267000DE090 /* ALAudioFairy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ALAudioFairy.cpp; sourceTree = "<group>"; };
+		948336A32046B267000DE090 /* ALAudioFairy.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ALAudioFairy.hpp; sourceTree = "<group>"; };
+		948336A62046B28E000DE090 /* VGamepadFairy.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VGamepadFairy.hpp; sourceTree = "<group>"; };
+		948336A7204A6A1E000DE090 /* miniz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = miniz.h; sourceTree = "<group>"; };
+		948336CA204A886B000DE090 /* NesFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NesFile.h; path = NESView/Cycloa/src/emulator/file/NesFile.h; sourceTree = SOURCE_ROOT; };
+		948336CB204A886B000DE090 /* NesFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NesFile.cpp; path = NESView/Cycloa/src/emulator/file/NesFile.cpp; sourceTree = SOURCE_ROOT; };
+		948336F4204A89A9000DE090 /* Processor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Processor.cpp; sourceTree = "<group>"; };
+		948336F5204A89A9000DE090 /* AudioChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioChannel.h; sourceTree = "<group>"; };
+		948336F6204A89A9000DE090 /* VirtualMachine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualMachine.cpp; sourceTree = "<group>"; };
+		948336F7204A89A9000DE090 /* VirtualMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtualMachine.h; sourceTree = "<group>"; };
+		948336F8204A89AA000DE090 /* Cartridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cartridge.cpp; sourceTree = "<group>"; };
+		948336F9204A89AA000DE090 /* Video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Video.cpp; sourceTree = "<group>"; };
+		948336FA204A89AA000DE090 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Audio.cpp; sourceTree = "<group>"; };
+		94833702204A89C6000DE090 /* Mapper0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper0.h; sourceTree = "<group>"; };
+		94833703204A89C6000DE090 /* Mapper3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper3.cpp; sourceTree = "<group>"; };
+		94833704204A89C6000DE090 /* Mapper4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper4.h; sourceTree = "<group>"; };
+		94833705204A89C6000DE090 /* Mapper2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper2.h; sourceTree = "<group>"; };
+		94833706204A89C7000DE090 /* Mapper0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper0.cpp; sourceTree = "<group>"; };
+		94833707204A89C7000DE090 /* Mapper21.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper21.h; sourceTree = "<group>"; };
+		94833708204A89C7000DE090 /* Mapper3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper3.h; sourceTree = "<group>"; };
+		94833709204A89C8000DE090 /* Mapper21.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper21.cpp; sourceTree = "<group>"; };
+		9483370A204A89C8000DE090 /* Mapper1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper1.h; sourceTree = "<group>"; };
+		9483370B204A89C8000DE090 /* Mapper23.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper23.cpp; sourceTree = "<group>"; };
+		9483370C204A89C8000DE090 /* Mapper23.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper23.h; sourceTree = "<group>"; };
+		9483370D204A89C9000DE090 /* Mapper25.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper25.cpp; sourceTree = "<group>"; };
+		9483370E204A89C9000DE090 /* Mapper4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper4.cpp; sourceTree = "<group>"; };
+		9483370F204A89C9000DE090 /* Mapper1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper1.cpp; sourceTree = "<group>"; };
+		94833710204A89C9000DE090 /* Mapper2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper2.cpp; sourceTree = "<group>"; };
+		94833711204A89C9000DE090 /* Mapper25.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper25.h; sourceTree = "<group>"; };
+		94833722204A89D6000DE090 /* VRC4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VRC4.cpp; sourceTree = "<group>"; };
+		94833723204A89D6000DE090 /* VRC4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRC4.h; sourceTree = "<group>"; };
+		94833726204A89F9000DE090 /* VideoFairy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoFairy.h; sourceTree = "<group>"; };
+		94833727204A89F9000DE090 /* GamepadFairy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamepadFairy.h; sourceTree = "<group>"; };
+		94833728204A89F9000DE090 /* AudioFairy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFairy.h; sourceTree = "<group>"; };
+		94833729204A89FA000DE090 /* FairyConstantValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FairyConstantValues.cpp; sourceTree = "<group>"; };
+		9483372E204A8A0C000DE090 /* EmulatorException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmulatorException.h; sourceTree = "<group>"; };
+		9483372F204A8A0D000DE090 /* EmulatorException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EmulatorException.cpp; sourceTree = "<group>"; };
+		94833733204A8A4A000DE090 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94833734204A8A4B000DE090 /* OpenAL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +128,7 @@
 			children = (
 				7423A0E920386CAB000E2AB5 /* NESView */,
 				7423A0E820386CAB000E2AB5 /* Products */,
+				94833732204A8A4A000DE090 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +143,130 @@
 		7423A0E920386CAB000E2AB5 /* NESView */ = {
 			isa = PBXGroup;
 			children = (
-				7423A0F520387069000E2AB5 /* emulator */,
+				948336A8204A751D000DE090 /* Cycloa */,
 				7423A0EA20386CAB000E2AB5 /* NESView.h */,
 				7423A0F720387111000E2AB5 /* NESView.m */,
+				9444F7BE2043B796004293DE /* NESLayer.h */,
+				9444F7BF2043B796004293DE /* NESLayer.m */,
+				9444F7C42043B7D9004293DE /* NESEmulator.h */,
+				9444F7C32043B7D9004293DE /* NESEmulator.cpp */,
+				9483369F2046B23E000DE090 /* CGVideoFairy.hpp */,
+				9483369E2046B23E000DE090 /* CGVideoFairy.cpp */,
+				948336A32046B267000DE090 /* ALAudioFairy.hpp */,
+				948336A22046B267000DE090 /* ALAudioFairy.cpp */,
+				948336A62046B28E000DE090 /* VGamepadFairy.hpp */,
 				7423A0FC203874AF000E2AB5 /* NESKey.h */,
 				7423A0FD203874AF000E2AB5 /* NESKey.m */,
 				7423A100203874CD000E2AB5 /* NESPlayer.h */,
 				7423A101203874CD000E2AB5 /* NESPlayer.m */,
+				948336A7204A6A1E000DE090 /* miniz.h */,
 				7423A0EB20386CAB000E2AB5 /* Info.plist */,
 			);
 			path = NESView;
+			sourceTree = "<group>";
+		};
+		948336A8204A751D000DE090 /* Cycloa */ = {
+			isa = PBXGroup;
+			children = (
+				948336A9204A755E000DE090 /* src */,
+			);
+			path = Cycloa;
+			sourceTree = "<group>";
+		};
+		948336A9204A755E000DE090 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				948336AB204A7596000DE090 /* emulator */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		948336AB204A7596000DE090 /* emulator */ = {
+			isa = PBXGroup;
+			children = (
+				948336FA204A89AA000DE090 /* Audio.cpp */,
+				948336F5204A89A9000DE090 /* AudioChannel.h */,
+				948336F8204A89AA000DE090 /* Cartridge.cpp */,
+				948336F4204A89A9000DE090 /* Processor.cpp */,
+				948336F9204A89AA000DE090 /* Video.cpp */,
+				948336F6204A89A9000DE090 /* VirtualMachine.cpp */,
+				948336F7204A89A9000DE090 /* VirtualMachine.h */,
+				948336CE204A8880000DE090 /* mapper */,
+				948336C9204A884C000DE090 /* file */,
+				948336C0204A8821000DE090 /* fairy */,
+				948336BB204A87CA000DE090 /* exception */,
+			);
+			path = emulator;
+			sourceTree = "<group>";
+		};
+		948336BB204A87CA000DE090 /* exception */ = {
+			isa = PBXGroup;
+			children = (
+				9483372F204A8A0D000DE090 /* EmulatorException.cpp */,
+				9483372E204A8A0C000DE090 /* EmulatorException.h */,
+			);
+			path = exception;
+			sourceTree = "<group>";
+		};
+		948336C0204A8821000DE090 /* fairy */ = {
+			isa = PBXGroup;
+			children = (
+				94833728204A89F9000DE090 /* AudioFairy.h */,
+				94833729204A89FA000DE090 /* FairyConstantValues.cpp */,
+				94833727204A89F9000DE090 /* GamepadFairy.h */,
+				94833726204A89F9000DE090 /* VideoFairy.h */,
+			);
+			path = fairy;
+			sourceTree = "<group>";
+		};
+		948336C9204A884C000DE090 /* file */ = {
+			isa = PBXGroup;
+			children = (
+				948336CB204A886B000DE090 /* NesFile.cpp */,
+				948336CA204A886B000DE090 /* NesFile.h */,
+			);
+			path = file;
+			sourceTree = "<group>";
+		};
+		948336CE204A8880000DE090 /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+				94833706204A89C7000DE090 /* Mapper0.cpp */,
+				94833702204A89C6000DE090 /* Mapper0.h */,
+				9483370F204A89C9000DE090 /* Mapper1.cpp */,
+				9483370A204A89C8000DE090 /* Mapper1.h */,
+				94833710204A89C9000DE090 /* Mapper2.cpp */,
+				94833705204A89C6000DE090 /* Mapper2.h */,
+				94833703204A89C6000DE090 /* Mapper3.cpp */,
+				94833708204A89C7000DE090 /* Mapper3.h */,
+				9483370E204A89C9000DE090 /* Mapper4.cpp */,
+				94833704204A89C6000DE090 /* Mapper4.h */,
+				94833709204A89C8000DE090 /* Mapper21.cpp */,
+				94833707204A89C7000DE090 /* Mapper21.h */,
+				9483370B204A89C8000DE090 /* Mapper23.cpp */,
+				9483370C204A89C8000DE090 /* Mapper23.h */,
+				9483370D204A89C9000DE090 /* Mapper25.cpp */,
+				94833711204A89C9000DE090 /* Mapper25.h */,
+				948336CF204A88A8000DE090 /* board */,
+			);
+			path = mapper;
+			sourceTree = "<group>";
+		};
+		948336CF204A88A8000DE090 /* board */ = {
+			isa = PBXGroup;
+			children = (
+				94833722204A89D6000DE090 /* VRC4.cpp */,
+				94833723204A89D6000DE090 /* VRC4.h */,
+			);
+			path = board;
+			sourceTree = "<group>";
+		};
+		94833732204A8A4A000DE090 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94833733204A8A4A000DE090 /* OpenAL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +276,29 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948336A12046B23E000DE090 /* CGVideoFairy.hpp in Headers */,
+				9483371C204A89C9000DE090 /* Mapper23.h in Headers */,
 				7423A0EC20386CAB000E2AB5 /* NESView.h in Headers */,
 				7423A0FE203874AF000E2AB5 /* NESKey.h in Headers */,
+				9483372A204A89FA000DE090 /* VideoFairy.h in Headers */,
+				9444F7C62043B7D9004293DE /* NESEmulator.h in Headers */,
+				948336FE204A89AA000DE090 /* VirtualMachine.h in Headers */,
+				94833715204A89C9000DE090 /* Mapper2.h in Headers */,
+				94833712204A89C9000DE090 /* Mapper0.h in Headers */,
+				9483371A204A89C9000DE090 /* Mapper1.h in Headers */,
+				94833725204A89D6000DE090 /* VRC4.h in Headers */,
+				9483372C204A89FA000DE090 /* AudioFairy.h in Headers */,
+				94833718204A89C9000DE090 /* Mapper3.h in Headers */,
+				9483372B204A89FA000DE090 /* GamepadFairy.h in Headers */,
+				94833714204A89C9000DE090 /* Mapper4.h in Headers */,
 				7423A102203874CD000E2AB5 /* NESPlayer.h in Headers */,
+				94833730204A8A0D000DE090 /* EmulatorException.h in Headers */,
+				948336FC204A89AA000DE090 /* AudioChannel.h in Headers */,
+				948336CC204A886B000DE090 /* NesFile.h in Headers */,
+				948336A52046B267000DE090 /* ALAudioFairy.hpp in Headers */,
+				94833717204A89C9000DE090 /* Mapper21.h in Headers */,
+				94833721204A89C9000DE090 /* Mapper25.h in Headers */,
+				9444F7C02043B796004293DE /* NESLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +360,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7423A0F620387069000E2AB5 /* emulator in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,9 +370,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94833713204A89C9000DE090 /* Mapper3.cpp in Sources */,
+				94833716204A89C9000DE090 /* Mapper0.cpp in Sources */,
+				9444F7C12043B796004293DE /* NESLayer.m in Sources */,
+				948336FB204A89AA000DE090 /* Processor.cpp in Sources */,
+				94833700204A89AA000DE090 /* Video.cpp in Sources */,
+				9483371B204A89C9000DE090 /* Mapper23.cpp in Sources */,
+				9483372D204A89FA000DE090 /* FairyConstantValues.cpp in Sources */,
+				948336FD204A89AA000DE090 /* VirtualMachine.cpp in Sources */,
+				9483371D204A89C9000DE090 /* Mapper25.cpp in Sources */,
+				948336FF204A89AA000DE090 /* Cartridge.cpp in Sources */,
+				9483371E204A89C9000DE090 /* Mapper4.cpp in Sources */,
+				948336CD204A886B000DE090 /* NesFile.cpp in Sources */,
+				94833701204A89AA000DE090 /* Audio.cpp in Sources */,
+				948336A42046B267000DE090 /* ALAudioFairy.cpp in Sources */,
+				94833719204A89C9000DE090 /* Mapper21.cpp in Sources */,
+				9483371F204A89C9000DE090 /* Mapper1.cpp in Sources */,
 				7423A0FF203874AF000E2AB5 /* NESKey.m in Sources */,
-				7423A0F820387111000E2AB5 /* NESView.m in Sources */,
+				9444F7C52043B7D9004293DE /* NESEmulator.cpp in Sources */,
+				94833731204A8A0D000DE090 /* EmulatorException.cpp in Sources */,
 				7423A103203874CD000E2AB5 /* NESPlayer.m in Sources */,
+				94833720204A89C9000DE090 /* Mapper2.cpp in Sources */,
+				94833724204A89D6000DE090 /* VRC4.cpp in Sources */,
+				948336A02046B23E000DE090 /* CGVideoFairy.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

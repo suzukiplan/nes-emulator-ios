@@ -6,8 +6,8 @@
 //  Copyright © 2018年 SUZUKI PLAN. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <NESView/NESKey.h>
+#import <UIKit/UIKit.h>
 
 //! Project version number for NESView.
 FOUNDATION_EXPORT double NESViewVersionNumber;
@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)loadRom:(NSData*)rom;
 - (void)tick:(NESKey*)key;
 - (void)ticks:(NSArray<NESKey*>*)keys;
+- (void)reset;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -6,24 +6,25 @@
 //  Copyright © 2018年 SUZUKI PLAN. All rights reserved.
 //
 
+#import "NESEmulator.h"
+#import "NESLayer.h"
 #import "NESView.h"
 
-@interface NESView()
+@interface NESView ()
 @property (nonatomic) CADisplayLink* displayLink;
-@end
-
-@interface NESLayer : CALayer
-@property (weak) NESView* view;
+@property (assign) void* context;
+@property (atomic) NSInteger frameCount;
+@property (nonatomic) BOOL destroyed;
 @end
 
 @implementation NESView
 
-+ (Class) layerClass
++ (Class)layerClass
 {
     return [NESLayer class];
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder
+- (id)initWithCoder:(NSCoder*)aDecoder
 {
     if ([super initWithCoder:aDecoder]) {
         [self _init];
@@ -33,7 +34,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    if ((self = [super initWithFrame:frame])!=nil) {
+    if ((self = [super initWithFrame:frame]) != nil) {
         [self _init];
     }
     return self;
@@ -41,104 +42,76 @@
 
 - (void)_init
 {
+    NSLog(@"initializing NESView");
+    _context = NESEmulator_init();
     self.opaque = NO;
     self.clearsContextBeforeDrawing = NO;
     self.multipleTouchEnabled = NO;
     self.userInteractionEnabled = NO;
-    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(setNeedsDisplay)];
-    [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    ((NESLayer*)self.layer).nesView = self;
+    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_detectVsync)];
+    [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    _destroyed = NO;
+}
+
+- (void)_detectVsync
+{
+    [self setNeedsDisplay];
+    [_delegate nesView:self didDetectVsyncWithFrameCount:_frameCount];
 }
 
 - (void)dealloc
 {
-    [_displayLink removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [self destroy];
+}
+
+- (void)destroy
+{
+    if (!_destroyed) {
+        NSLog(@"terminating NESView");
+        [_displayLink removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        _displayLink = nil;
+        NESEmulator_deinit(_context);
+        _context = NULL;
+        _destroyed = YES;
+    }
 }
 
 - (BOOL)loadRom:(NSData*)rom
 {
-    // TODO: need implement
-    return NO;
+    NSLog(@"loading rom: size = %lud", rom.length);
+    NESEmulator_loadRom(_context, rom.bytes, rom.length);
+    _frameCount = 0;
+    return YES;
 }
 
 - (void)tick:(NESKey*)key
 {
-    // TODO: need implement
+    NESEmulator_execFrame(_context, (int)key.code);
+    _frameCount++;
+    [self _copyVram];
 }
 
 - (void)ticks:(NSArray<NESKey*>*)keys
 {
-    // TODO: need implement
+    [keys enumerateObjectsUsingBlock:^(NESKey* _Nonnull key, NSUInteger index, BOOL* _Nonnull stop) {
+        NESEmulator_execFrame((void*)_context, (int)key.code);
+        _frameCount++;
+    }];
+    [self _copyVram];
 }
 
-@end
-
-@implementation NESLayer
-
-static void* GameLoop(void* args)
+- (void)_copyVram
 {
-    while(alive_flag) {
-        while(event_flag) usleep(100);
-        nes_vram_copy(imgbuf[bno]);
-        event_flag = true;
-    }
-    end_flag = true;
-    return NULL;
+    [(NESLayer*)self.layer lockVram];
+    unsigned short* vram = [(NESLayer*)self.layer getVram];
+    NESEmulator_copyVram(_context, vram);
+    [(NESLayer*)self.layer unlockVram];
 }
 
-+(id)defaultActionForKey:(NSString *)key
+- (void)reset
 {
-    return nil;
-}
-
-- (id)init {
-    if (self = [super init]) {
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        for(int i = 0; i < 2; i++) {
-            img[i] = CGBitmapContextCreate(imgbuf[i],
-                                           VRAM_WIDTH,
-                                           VRAM_HEIGHT,
-                                           5,
-                                           VRAM_WIDTH * 2,
-                                           colorSpace,
-                                           kCGImageAlphaNoneSkipFirst|
-                                           kCGBitmapByteOrder16Little
-                                           );
-            if (!img[i]) NSLog(@"CREATE FAILED");
-        }
-        CFRelease(colorSpace);
-        pthread_create(&tid, NULL, GameLoop, NULL);
-        struct sched_param param;
-        memset(&param,0,sizeof(param));
-        param.sched_priority = 46;
-        pthread_setschedparam(tid,SCHED_OTHER,&param);
-    }
-    return self;
-}
-
-- (void)orientationChanged:(NSNotification *)notification
-{
-}
-
-- (void)display {
-    while (!event_flag) usleep(100);
-        bno = 1 - bno;
-        event_flag = false;
-        CGImageRef cgImage = CGBitmapContextCreateImage(img[1 - bno]);
-        self.contents = (__bridge id)cgImage;
-        CFRelease(cgImage);
-        [self.view.delegate gameScreenDidUpdate];
-}
-
-- (void)dealloc
-{
-    alive_flag = false;
-    while (!end_flag) usleep(100);
-        for (int i = 0; i < 2; i++) {
-            if (img[i]) {
-                CFRelease(img[i]);
-                img[i] = nil;
-            }
-        }
+    NESEmulator_reset((void*)_context);
 }
 
 @end
