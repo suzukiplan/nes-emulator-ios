@@ -19,18 +19,21 @@ static const unsigned short _nesRgb555[64] = {
     0x7FFF, 0x539F, 0x5EFF, 0x6EFF, 0x7EFF, 0x7E98, 0x7B56, 0x7F95,
     0x7F6F, 0x6FEF, 0x5FF7, 0x5FFB, 0x03FF, 0x7F7F, 0x0000, 0x0000};
 
-CGVideoFairy::CGVideoFairy() {}
+CGVideoFairy::CGVideoFairy()
+{
+}
 
-CGVideoFairy::~CGVideoFairy() {}
+CGVideoFairy::~CGVideoFairy()
+{
+}
 
-void CGVideoFairy::dispatchRendering(
-    const uint8_t(&nesBuffer)[screenHeight][screenWidth],
-    const uint8_t paletteMask) {
-  int ptr = 0;
-  for (int y = 0; y < screenHeight; y++) {
-    for (int x = 0; x < screenWidth; x++) {
-      bitmap565[ptr++] = _nesRgb555[nesBuffer[y][x] & paletteMask];
+void CGVideoFairy::dispatchRendering(const uint8_t (&nesBuffer)[screenHeight][screenWidth], const uint8_t paletteMask)
+{
+    int ptr = 0;
+    for (int y = 0; y < screenHeight; y++) {
+        for (int x = 0; x < screenWidth; x++) {
+            bitmap565[ptr++] = _nesRgb555[nesBuffer[y][x] & paletteMask];
+        }
     }
-  }
-  rendered = true;
+    rendered = true;
 }

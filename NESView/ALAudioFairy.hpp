@@ -19,31 +19,30 @@
 #define kOutputBus 0
 #define kInputBus 1
 #define BUFNUM 2
-typedef ALvoid AL_APIENTRY (*alBufferDataStaticProcPtr)(
-    const ALint bid, ALenum format, ALvoid *data, ALsizei size, ALsizei freq);
+typedef ALvoid AL_APIENTRY (*alBufferDataStaticProcPtr)(const ALint bid, ALenum format, ALvoid* data, ALsizei size, ALsizei freq);
 
-class ALAudioFairy : public AudioFairy {
-public: // 以下はsound_threadから参照するのでスコープを public にしている
-        // (外部からは触ってはならない)
-  ALCdevice *sndDev;
-  ALCcontext *sndCtx;
-  ALuint sndABuf;
-  ALuint sndASrc;
-  alBufferDataStaticProcPtr alBufferDataStaticProc;
-  volatile bool alive;
-  void buffering(void *buffer, int *size);
+class ALAudioFairy : public AudioFairy
+{
+  public: // 以下はsound_threadから参照するのでスコープを public にしている (外部からは触ってはならない)
+    ALCdevice* sndDev;
+    ALCcontext* sndCtx;
+    ALuint sndABuf;
+    ALuint sndASrc;
+    alBufferDataStaticProcPtr alBufferDataStaticProc;
+    volatile bool alive;
+    void buffering(void* buffer, int* size);
 
-private:
-  pthread_mutex_t mutex;
-  pthread_t tid;
-  void termAL();
-  bool initAL();
+  private:
+    pthread_mutex_t mutex;
+    pthread_t tid;
+    void termAL();
+    bool initAL();
 
-public:
-  ALAudioFairy();
-  ~ALAudioFairy();
-  void lock();
-  void unlock();
+  public:
+    ALAudioFairy();
+    ~ALAudioFairy();
+    void lock();
+    void unlock();
 };
 
 #endif /* ALAudioFaily_hpp */
