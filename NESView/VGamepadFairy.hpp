@@ -12,50 +12,39 @@
 #include "Cycloa/src/emulator/fairy/GamepadFairy.h"
 #include <stdio.h>
 
-class VGamepadFairy : public GamepadFairy
-{
-  public:
-    int code;
+class VGamepadFairy : public GamepadFairy {
+public:
+  int code;
 
-    VGamepadFairy()
-    {
-        code = 0;
-    }
+  VGamepadFairy() { code = 0; }
 
-    ~VGamepadFairy()
-    {
-    }
+  ~VGamepadFairy() {}
 
-    void onVBlank()
-    {
-    }
+  void onVBlank() {}
 
-    void onUpdate()
-    {
-    }
+  void onUpdate() {}
 
-    bool isPressed(uint8_t keyIdx)
-    {
-        switch (keyIdx) {
-            case A:
-                return code & MASK_A;
-            case B:
-                return code & MASK_B;
-            case START:
-                return code & MASK_START;
-            case SELECT:
-                return code & MASK_SELECT;
-            case UP:
-                return code & MASK_UP;
-            case DOWN:
-                return code & MASK_DOWN;
-            case LEFT:
-                return code & MASK_LEFT;
-            case RIGHT:
-                return code & MASK_RIGHT;
-        }
-        return false;
+  bool isPressed(uint8_t keyIdx) {
+    switch (keyIdx) {
+    case A:
+      return code & MASK_A;
+    case B:
+      return code & MASK_B;
+    case START:
+      return code & MASK_START;
+    case SELECT:
+      return code & MASK_SELECT;
+    case UP:
+      return code & MASK_UP;
+    case DOWN:
+      return code & MASK_DOWN;
+    case LEFT:
+      return code & MASK_LEFT;
+    case RIGHT:
+      return code & MASK_RIGHT;
     }
+    return false;
+  }
 };
 
 #endif /* VGamePad_h */
