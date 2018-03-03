@@ -10,7 +10,7 @@
 #import <NESView/NESPlayer.h>
 
 @interface NESKey : NSObject
-@property (nonatomic, readonly, strong, nonnull) NESPlayer* player1;
-@property (nonatomic, readonly, strong, nonnull) NESPlayer* player2;
-@property (nonatomic, readonly) NSInteger code;
+@property(nonatomic, readonly, strong, nonnull) NESPlayer *player1;
+@property(nonatomic, readonly, strong, nonnull) NESPlayer *player2;
+@property(nonatomic, readonly) NSInteger code;
 @end
