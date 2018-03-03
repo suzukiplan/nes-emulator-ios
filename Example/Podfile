@@ -1,2 +1,4 @@
 target 'Example'
+platform :ios, '11.2'
+install! 'cocoapods', :deterministic_uuids => false
 pod "NESView", :path => "../"
