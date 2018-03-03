@@ -1,0 +1,2 @@
+rm -rf Pods Podfile.lock Example.xcworkspace/
+
