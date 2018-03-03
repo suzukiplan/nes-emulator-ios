@@ -10,8 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface NESLayer : CALayer
-@property(nonatomic, weak) NESView *nesView;
-- (unsigned short *)getVram;
+@property (nonatomic, weak) NESView* nesView;
+- (unsigned short*)getVram;
 - (void)lockVram;
 - (void)unlockVram;
 @end

@@ -25,12 +25,13 @@ CGVideoFairy::~CGVideoFairy() {}
 
 void CGVideoFairy::dispatchRendering(
     const uint8_t(&nesBuffer)[screenHeight][screenWidth],
-    const uint8_t paletteMask) {
-  int ptr = 0;
-  for (int y = 0; y < screenHeight; y++) {
-    for (int x = 0; x < screenWidth; x++) {
-      bitmap565[ptr++] = _nesRgb555[nesBuffer[y][x] & paletteMask];
+    const uint8_t paletteMask)
+{
+    int ptr = 0;
+    for (int y = 0; y < screenHeight; y++) {
+        for (int x = 0; x < screenWidth; x++) {
+            bitmap565[ptr++] = _nesRgb555[nesBuffer[y][x] & paletteMask];
+        }
     }
-  }
-  rendered = true;
+    rendered = true;
 }

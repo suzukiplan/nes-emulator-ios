@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface NESPlayer : NSObject
-@property(nonatomic, readwrite) BOOL up;
-@property(nonatomic, readwrite) BOOL down;
-@property(nonatomic, readwrite) BOOL left;
-@property(nonatomic, readwrite) BOOL right;
-@property(nonatomic, readwrite) BOOL a;
-@property(nonatomic, readwrite) BOOL b;
-@property(nonatomic, readwrite) BOOL select;
-@property(nonatomic, readwrite) BOOL start;
+@property (nonatomic, readwrite) BOOL up;
+@property (nonatomic, readwrite) BOOL down;
+@property (nonatomic, readwrite) BOOL left;
+@property (nonatomic, readwrite) BOOL right;
+@property (nonatomic, readwrite) BOOL a;
+@property (nonatomic, readwrite) BOOL b;
+@property (nonatomic, readwrite) BOOL select;
+@property (nonatomic, readwrite) BOOL start;
 @end

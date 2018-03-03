@@ -10,7 +10,8 @@
 
 @implementation NESPlayer
 
-- (instancetype)init {
-  return [super init];
+- (instancetype)init
+{
+    return [super init];
 }
 @end

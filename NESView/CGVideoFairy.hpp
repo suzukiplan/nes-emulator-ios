@@ -12,14 +12,15 @@
 #include "Cycloa/src/emulator/fairy/VideoFairy.h"
 #include <stdio.h>
 
-class CGVideoFairy : public VideoFairy {
-public:
-  bool rendered;
-  unsigned short bitmap565[screenWidth * screenHeight];
-  CGVideoFairy();
-  ~CGVideoFairy();
-  void dispatchRendering(const uint8_t(&nesBuffer)[screenHeight][screenWidth],
-                         const uint8_t paletteMask);
+class CGVideoFairy : public VideoFairy
+{
+  public:
+    bool rendered;
+    unsigned short bitmap565[screenWidth * screenHeight];
+    CGVideoFairy();
+    ~CGVideoFairy();
+    void dispatchRendering(const uint8_t(&nesBuffer)[screenHeight][screenWidth],
+                           const uint8_t paletteMask);
 };
 
 #endif /* CGVideoFaily_hpp */
