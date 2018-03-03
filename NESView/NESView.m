@@ -99,8 +99,8 @@
 {
     [keys enumerateObjectsUsingBlock:^(NESKey* _Nonnull key, NSUInteger index,
                                        BOOL* _Nonnull stop) {
-        NESEmulator_execFrame((void*)_context, (int)key.code);
-        _frameCount++;
+        NESEmulator_execFrame((void*)self.context, (int)key.code);
+        self.frameCount++;
     }];
     [self _copyVram];
 }

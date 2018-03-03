@@ -90,14 +90,14 @@ int NESEmulator_loadRom(void* context, const void* rom, size_t size)
     return true;
 }
 
-void NESEmulator_execFrame(void* context, int keyP1, int keyP2)
+void NESEmulator_execFrame(void* context, int keyCode)
 {
     struct Context* c = (struct Context*)context;
     if (!c->loaded) {
         return;
     }
-    ((VGamepadFairy*)c->pad1)->code = keyP1;
-    ((VGamepadFairy*)c->pad2)->code = keyP2;
+    ((VGamepadFairy*)c->pad1)->code = keyCode & 0xff;
+    ((VGamepadFairy*)c->pad2)->code = (keyCode & 0xff00) >> 8;
     ((CGVideoFairy*)c->video)->rendered = false;
     while (!((CGVideoFairy*)c->video)->rendered)
         c->vm->run();

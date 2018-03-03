@@ -15,6 +15,7 @@
 		74A429FB204A8E3C00B06B4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A429FA204A8E3C00B06B4B /* Assets.xcassets */; };
 		74A429FE204A8E3C00B06B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A429FC204A8E3C00B06B4B /* LaunchScreen.storyboard */; };
 		74A42A01204A8E3C00B06B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A42A00204A8E3C00B06B4B /* main.m */; };
+		74A42A08204A956500B06B4B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A42A07204A956500B06B4B /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		74A429FD204A8E3C00B06B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A429FF204A8E3C00B06B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A42A00204A8E3C00B06B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		74A42A07204A956500B06B4B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		F5BF3CBFD38791253E054E94 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A42A08204A956500B06B4B /* libc++.tbd in Frameworks */,
 				0BE1B0DD3690AD20487E6DD7 /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +87,7 @@
 		831EC229FA18A0045625064F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74A42A07204A956500B06B4B /* libc++.tbd */,
 				267745808609369F739754F7 /* libPods-Example.a */,
 			);
 			name = Frameworks;
