@@ -42,7 +42,6 @@
 
 - (void)_init
 {
-    NSLog(@"initializing NESView");
     _context = NESEmulator_init();
     self.opaque = NO;
     self.clearsContextBeforeDrawing = NO;
@@ -70,7 +69,6 @@
 - (void)destroy
 {
     if (!_destroyed) {
-        NSLog(@"terminating NESView");
         [_displayLink removeFromRunLoop:[NSRunLoop currentRunLoop]
                                 forMode:NSDefaultRunLoopMode];
         _displayLink = nil;
@@ -82,7 +80,6 @@
 
 - (BOOL)loadRom:(NSData*)rom
 {
-    NSLog(@"loading rom: size = %lu", rom.length);
     if (rom.length < 1) {
         return NO;
     }
