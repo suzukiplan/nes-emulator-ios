@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<NESViewDelegate> delegate;
 - (BOOL)loadRom:(NSData*)rom;
 - (void)tick:(NESKey*)key;
-- (void)ticks:(NSArray<NESKey*>*)keys;
+- (void)ticks:(NSArray<NESKey*>*)keys count:(NSInteger)count;
 - (void)reset;
 - (void)destroy;
 @end

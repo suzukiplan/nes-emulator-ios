@@ -16,6 +16,7 @@ static void* sound_thread(void* context)
     ALAudioFairy* c = (ALAudioFairy*)context;
     ALint st;
     char buffer[16384];
+    short skipBuffer[4096];
     int size;
 
     memset(buffer, 0, sizeof(buffer));
@@ -41,7 +42,16 @@ static void* sound_thread(void* context)
         }
         size = (int)sizeof(buffer);
         c->buffering(buffer, &size);
-        alBufferData(c->sndABuf, SAMPLING_FORMAT, buffer, size, SAMPLING_RATE);
+        int speed = c->speed;
+        if (speed < 2) {
+            alBufferData(c->sndABuf, SAMPLING_FORMAT, buffer, size, SAMPLING_RATE);
+        } else {
+            int shrinkedSize = 0;
+            for (int i = 0; i < size / 2; i += speed, shrinkedSize++) {
+                skipBuffer[shrinkedSize] = ((short*)buffer)[i];
+            }
+            alBufferData(c->sndABuf, SAMPLING_FORMAT, skipBuffer, shrinkedSize * 2, SAMPLING_RATE);
+        }
         alSourceQueueBuffers(c->sndASrc, 1, &c->sndABuf);
     }
 
@@ -61,6 +71,7 @@ ALAudioFairy::ALAudioFairy()
     sndCtx = NULL;
     sndABuf = 0;
     sndASrc = 0;
+    speed = 1;
     alBufferDataStaticProc = NULL;
     pthread_mutex_init(&mutex, NULL);
     if (!initAL()) {

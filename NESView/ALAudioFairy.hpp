@@ -32,6 +32,7 @@ class ALAudioFairy : public AudioFairy
     ALuint sndASrc;
     alBufferDataStaticProcPtr alBufferDataStaticProc;
     volatile bool alive;
+    volatile int speed;
     void buffering(void* buffer, int* size);
 
   private:

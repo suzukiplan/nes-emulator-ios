@@ -45,4 +45,10 @@
     return code1 + code2 * 256;
 }
 
+- (void)setCode:(NSInteger)code
+{
+    [_player1 setCode:(code & 0xff)];
+    [_player2 setCode:((code & 0xff00) >> 8)];
+}
+
 @end

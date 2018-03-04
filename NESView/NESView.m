@@ -90,18 +90,19 @@
 
 - (void)tick:(NESKey*)key
 {
+    NESEmulator_setPlaySpeed(_context, 1);
     NESEmulator_execFrame(_context, (int)key.code);
     _frameCount++;
     [self _copyVram];
 }
 
-- (void)ticks:(NSArray<NESKey*>*)keys
+- (void)ticks:(NSArray<NESKey*>*)keys count:(NSInteger)count
 {
-    [keys enumerateObjectsUsingBlock:^(NESKey* _Nonnull key, NSUInteger index,
-                                       BOOL* _Nonnull stop) {
-        NESEmulator_execFrame((void*)self.context, (int)key.code);
+    NESEmulator_setPlaySpeed(_context, (int)count);
+    for (NSInteger index = 0; index < count; index++) {
+        NESEmulator_execFrame((void*)self.context, (int)keys[index].code);
         self.frameCount++;
-    }];
+    }
     [self _copyVram];
 }
 

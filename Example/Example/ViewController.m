@@ -11,7 +11,8 @@
 
 @interface ViewController () <NESViewDelegate>
 @property (nonatomic) NESView* nesView;
-@property (nonatomic) NESKey* nesKey;
+@property (nonatomic) NSArray<NESKey*>* nesKeys;
+@property (atomic) NSInteger playSpeed;
 @end
 
 @implementation ViewController
@@ -19,7 +20,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _nesKey = [[NESKey alloc] init];
+    NSMutableArray* keys = [NSMutableArray arrayWithCapacity:8];
+    for (int i = 0; i < 8; i++) {
+        keys[i] = [[NESKey alloc] init];
+    }
+    self.nesKeys = keys;
+    _playSpeed = 1;
 
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     int position = 24;
@@ -111,7 +117,16 @@
 
 - (void)nesView:(NESView*)nesView didDetectVsyncWithFrameCount:(NSInteger)frameCount
 {
-    [nesView tick:_nesKey];
+    NSInteger playSpeed = _playSpeed;
+    if (1 == playSpeed) {
+        [nesView tick:_nesKeys[0]];
+    } else {
+        NSInteger code = _nesKeys[0].code;
+        for (int i = 1; i < playSpeed; i++) {
+            [_nesKeys[i] setCode:code];
+        }
+        [nesView ticks:_nesKeys count:playSpeed];
+    }
 }
 
 - (void)reset
@@ -131,8 +146,8 @@
 
 - (void)changeSpeed:(UIButton*)sender
 {
-    // TODO
     NSLog(@"change speed: x%lu", sender.tag);
+    _playSpeed = sender.tag;
 }
 
 - (void)saveState
@@ -147,82 +162,82 @@
 
 - (void)pushUp
 {
-    _nesKey.player1.up = YES;
+    _nesKeys[0].player1.up = YES;
 }
 
 - (void)releaseUp
 {
-    _nesKey.player1.up = NO;
+    _nesKeys[0].player1.up = NO;
 }
 
 - (void)pushDown
 {
-    _nesKey.player1.down = YES;
+    _nesKeys[0].player1.down = YES;
 }
 
 - (void)releaseDown
 {
-    _nesKey.player1.down = NO;
+    _nesKeys[0].player1.down = NO;
 }
 
 - (void)pushLeft
 {
-    _nesKey.player1.left = YES;
+    _nesKeys[0].player1.left = YES;
 }
 
 - (void)releaseLeft
 {
-    _nesKey.player1.left = NO;
+    _nesKeys[0].player1.left = NO;
 }
 
 - (void)pushRight
 {
-    _nesKey.player1.right = YES;
+    _nesKeys[0].player1.right = YES;
 }
 
 - (void)releaseRight
 {
-    _nesKey.player1.right = NO;
+    _nesKeys[0].player1.right = NO;
 }
 
 - (void)pushA
 {
-    _nesKey.player1.a = YES;
+    _nesKeys[0].player1.a = YES;
 }
 
 - (void)releaseA
 {
-    _nesKey.player1.a = NO;
+    _nesKeys[0].player1.a = NO;
 }
 
 - (void)pushB
 {
-    _nesKey.player1.b = YES;
+    _nesKeys[0].player1.b = YES;
 }
 
 - (void)releaseB
 {
-    _nesKey.player1.b = NO;
+    _nesKeys[0].player1.b = NO;
 }
 
 - (void)pushSelect
 {
-    _nesKey.player1.select = YES;
+    _nesKeys[0].player1.select = YES;
 }
 
 - (void)releaseSelect
 {
-    _nesKey.player1.select = NO;
+    _nesKeys[0].player1.select = NO;
 }
 
 - (void)pushStart
 {
-    _nesKey.player1.start = YES;
+    _nesKeys[0].player1.start = YES;
 }
 
 - (void)releaseStart
 {
-    _nesKey.player1.start = NO;
+    _nesKeys[0].player1.start = NO;
 }
 
 - (void)didReceiveMemoryWarning

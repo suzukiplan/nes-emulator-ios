@@ -13,4 +13,5 @@
 @property (nonatomic, readonly, strong, nonnull) NESPlayer* player1;
 @property (nonatomic, readonly, strong, nonnull) NESPlayer* player2;
 @property (nonatomic, readonly) NSInteger code;
+- (void)setCode:(NSInteger)code;
 @end

@@ -20,10 +20,10 @@
 
 struct Context {
     pthread_mutex_t mutex;
-    VideoFairy* video;
-    AudioFairy* audio;
-    GamepadFairy* pad1;
-    GamepadFairy* pad2;
+    CGVideoFairy* video;
+    ALAudioFairy* audio;
+    VGamepadFairy* pad1;
+    VGamepadFairy* pad2;
     VirtualMachine* vm;
     uint8_t* rom;
     uint32_t romSize;
@@ -90,6 +90,15 @@ int NESEmulator_loadRom(void* context, const void* rom, size_t size)
     return true;
 }
 
+void NESEmulator_setPlaySpeed(void* context, int speed)
+{
+    struct Context* c = (struct Context*)context;
+    if (!c->loaded || speed < 1) {
+        return;
+    }
+    c->audio->speed = speed;
+}
+
 void NESEmulator_execFrame(void* context, int keyCode)
 {
     struct Context* c = (struct Context*)context;
@@ -99,30 +108,16 @@ void NESEmulator_execFrame(void* context, int keyCode)
     ((VGamepadFairy*)c->pad1)->code = keyCode & 0xff;
     ((VGamepadFairy*)c->pad2)->code = (keyCode & 0xff00) >> 8;
     ((CGVideoFairy*)c->video)->rendered = false;
-    while (!((CGVideoFairy*)c->video)->rendered)
+    while (!((CGVideoFairy*)c->video)->rendered) {
         c->vm->run();
-    pthread_mutex_lock(&c->mutex);
-    memcpy(c->vram, ((CGVideoFairy*)c->video)->bitmap565, sizeof(c->vram));
-    pthread_mutex_unlock(&c->mutex);
-}
-
-void NESEmulator_skipFrame(void* context, int keyP1, int keyP2)
-{
-    struct Context* c = (struct Context*)context;
-    if (!c->loaded) {
-        return;
     }
-    ((VGamepadFairy*)c->pad1)->code = keyP1;
-    ((VGamepadFairy*)c->pad2)->code = keyP2;
-    ((CGVideoFairy*)c->video)->rendered = false;
-    while (!((CGVideoFairy*)c->video)->rendered)
-        c->vm->run();
 }
 
 void NESEmulator_copyVram(void* context, void* copyTo)
 {
     struct Context* c = (struct Context*)context;
     pthread_mutex_lock(&c->mutex);
+    memcpy(c->vram, ((CGVideoFairy*)c->video)->bitmap565, sizeof(c->vram));
     memcpy(copyTo, c->vram, sizeof(c->vram));
     pthread_mutex_unlock(&c->mutex);
 }
