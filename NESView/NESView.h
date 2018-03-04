@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NESView;
 
 @protocol NESViewDelegate <NSObject>
+@required
 - (void)nesView:(NESView*)nesView
     didDetectVsyncWithFrameCount:(NSInteger)frameCount;
 @end
