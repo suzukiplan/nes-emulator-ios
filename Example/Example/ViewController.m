@@ -13,6 +13,7 @@
 @property (nonatomic) NESView* nesView;
 @property (nonatomic) NSArray<NESKey*>* nesKeys;
 @property (atomic) NSInteger playSpeed;
+@property (nonatomic) NSData* state;
 @end
 
 @implementation ViewController
@@ -152,12 +153,16 @@
 
 - (void)saveState
 {
-    // TODO
+    if (!(_state = [_nesView saveState])) {
+        [self showErrorMessage:@"Failed saving state."];
+    }
 }
 
 - (void)loadState
 {
-    // TODO
+    if (![_nesView loadRom:_state]) {
+        [self showErrorMessage:@"Failed loading state."];
+    }
 }
 
 - (void)pushUp
@@ -238,6 +243,18 @@
 - (void)releaseStart
 {
     _nesKeys[0].player1.start = NO;
+}
+
+- (void)showErrorMessage:(NSString*)message
+{
+    UIAlertController* ctrl = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* action = [UIAlertAction actionWithTitle:@"Close"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction* action) {
+                                                       [ctrl dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+    [ctrl addAction:action];
+    [self presentViewController:ctrl animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
