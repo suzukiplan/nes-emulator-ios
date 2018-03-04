@@ -83,7 +83,7 @@
     if (rom.length < 1) {
         return NO;
     }
-    NESEmulator_loadRom(_context, rom.bytes, rom.length);
+    NESEmulator_loadRom(_context, rom.bytes, (size_t)rom.length);
     _frameCount = 0;
     return YES;
 }
