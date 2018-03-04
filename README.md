@@ -22,7 +22,9 @@ __IMPORTANT: Your Project's license must to GPLv3 or compatible if use it. (conf
 ### (1) Podfile
 
 ```
-TODO
+abstract_target 'defaults' do
+    pod 'NESView', '~1.0.0'
+end
 ```
 
 ### (2) ViewController
