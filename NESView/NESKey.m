@@ -13,15 +13,6 @@
 @property (nonatomic, readwrite, strong, nonnull) NESPlayer* player2;
 @end
 
-#define MASK_A 1
-#define MASK_B 2
-#define MASK_SELECT 4
-#define MASK_START 8
-#define MASK_UP 16
-#define MASK_DOWN 32
-#define MASK_LEFT 64
-#define MASK_RIGHT 128
-
 @implementation NESKey
 
 - (instancetype)init
