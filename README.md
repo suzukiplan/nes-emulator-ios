@@ -70,7 +70,7 @@ git clone https://github.com/suzukiplan/nes-emulator-ios
 cd nes-emulator-ios
 cd Example
 pod install
-open Example.xcproject
+open Example.xcworkspace
 ```
 
 ## License
