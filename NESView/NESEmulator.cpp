@@ -127,7 +127,10 @@ void NESEmulator_reset(void* context)
     ((struct Context*)context)->vm->sendHardReset();
 }
 
-int NESEmulator_getDump(void* context, void* dump, size_t* size) { return -1; }
+int NESEmulator_getDump(void* context, void* dump, size_t* size)
+{
+    return -1;
+}
 
 int NESEmulator_setDump(void* context, const void* dump, size_t size)
 {

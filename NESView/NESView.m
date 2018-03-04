@@ -121,4 +121,17 @@
     [(NESLayer*)self.layer unlockVram];
 }
 
+- (nullable NSData*)saveState
+{
+    return nil; // TODO
+}
+
+- (BOOL)loadState:(nullable NSData*)state
+{
+    if (!state) {
+        return NO;
+    }
+    return NESEmulator_setDump(_context, state.bytes, (size_t)state.length) ? NO : YES;
+}
+
 @end

@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ticks:(NSArray<NESKey*>*)keys count:(NSInteger)count;
 - (void)reset;
 - (void)destroy;
+- (nullable NSData*)saveState;
+- (BOOL)loadState:(nullable NSData*)state;
 @end
 
 NS_ASSUME_NONNULL_END
