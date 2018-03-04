@@ -17,6 +17,7 @@
 		74A42A01204A8E3C00B06B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A42A00204A8E3C00B06B4B /* main.m */; };
 		74A42A08204A956500B06B4B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A42A07204A956500B06B4B /* libc++.tbd */; };
 		74A42A0A204B6C1D00B06B4B /* example.nes in Resources */ = {isa = PBXBuildFile; fileRef = 74A42A09204B66FE00B06B4B /* example.nes */; };
+		74A42A0D204C2B5300B06B4B /* CaptureImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A42A0C204C2B5300B06B4B /* CaptureImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		74A42A00204A8E3C00B06B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		74A42A07204A956500B06B4B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		74A42A09204B66FE00B06B4B /* example.nes */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.nes; sourceTree = "<group>"; };
+		74A42A0B204C2B5300B06B4B /* CaptureImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptureImageViewController.h; sourceTree = "<group>"; };
+		74A42A0C204C2B5300B06B4B /* CaptureImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptureImageViewController.m; sourceTree = "<group>"; };
 		F5BF3CBFD38791253E054E94 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +80,8 @@
 				74A429EF204A8E3C00B06B4B /* AppDelegate.m */,
 				74A429F1204A8E3C00B06B4B /* ViewController.h */,
 				74A429F2204A8E3C00B06B4B /* ViewController.m */,
+				74A42A0B204C2B5300B06B4B /* CaptureImageViewController.h */,
+				74A42A0C204C2B5300B06B4B /* CaptureImageViewController.m */,
 				74A429F4204A8E3C00B06B4B /* Main.storyboard */,
 				74A429FA204A8E3C00B06B4B /* Assets.xcassets */,
 				74A429FC204A8E3C00B06B4B /* LaunchScreen.storyboard */,
@@ -233,6 +238,7 @@
 			files = (
 				74A429F3204A8E3C00B06B4B /* ViewController.m in Sources */,
 				74A429F9204A8E3C00B06B4B /* Example.xcdatamodeld in Sources */,
+				74A42A0D204C2B5300B06B4B /* CaptureImageViewController.m in Sources */,
 				74A42A01204A8E3C00B06B4B /* main.m in Sources */,
 				74A429F0204A8E3C00B06B4B /* AppDelegate.m in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CaptureImageViewController.h"
 #import <NESView/NESView.h>
 
 @interface ViewController () <NESViewDelegate>
@@ -14,6 +15,7 @@
 @property (nonatomic) NSArray<NESKey*>* nesKeys;
 @property (atomic) NSInteger playSpeed;
 @property (nonatomic) NSData* state;
+@property (nonatomic) UIImage* captureImage;
 @end
 
 @implementation ViewController
@@ -137,7 +139,12 @@
 
 - (void)captureVideo
 {
-    // TODO
+    _captureImage = [_nesView capture];
+    CaptureImageViewController* vc = [[CaptureImageViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    vc.captureImage = _captureImage;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)captureAudio
