@@ -16,7 +16,8 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     _nesKey = [[NESKey alloc] init];
 
@@ -25,28 +26,28 @@
 
     { // initialize and place the NESView
         int width = screenSize.width - 16;
-        int height = (int) (width / 16.0 * 15);
+        int height = (int)(width / 16.0 * 15);
         _nesView = [[NESView alloc] initWithFrame:CGRectMake(8, position, width, height)];
         _nesView.delegate = self;
         [self.view addSubview:_nesView];
     }
 
     { // load a ROM file to the NESView
-        NSURL *romURL = [[NSBundle mainBundle] URLForResource:@"example" withExtension:@"nes"];
-        NSLog(@"rom: %@",romURL);
+        NSURL* romURL = [[NSBundle mainBundle] URLForResource:@"example" withExtension:@"nes"];
+        NSLog(@"rom: %@", romURL);
         NSData* romData = [NSData dataWithContentsOfFile:romURL.path];
         [_nesView loadRom:romData];
     }
 }
 
-- (void)nesView:(NESView *)nesView didDetectVsyncWithFrameCount:(NSInteger)frameCount
+- (void)nesView:(NESView*)nesView didDetectVsyncWithFrameCount:(NSInteger)frameCount
 {
     [nesView tick:_nesKey];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
-
 
 @end
