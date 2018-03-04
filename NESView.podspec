@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "NESView"
-  s.version = "0.1.0"
+  s.version = "1.0.0"
   s.summary = "NES emulator for iOS"
   s.homepage = "https://github.com/suzukiplan/nes-emulator-ios"
   s.author = 'SUZUKI PLAN'
