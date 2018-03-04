@@ -22,7 +22,19 @@
     _nesKey = [[NESKey alloc] init];
 
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    int position = 20;
+    int position = 24;
+
+    { // RESET button
+        UIButton* button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.frame = CGRectMake(8, position, 72, 32);
+        button.layer.cornerRadius = 4.0;
+        button.layer.borderColor = button.tintColor.CGColor;
+        button.layer.borderWidth = 2.0;
+        [button setTitle:@"RESET" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
+    position += 40;
 
     { // initialize and place the NESView
         int width = screenSize.width - 16;
@@ -43,6 +55,11 @@
 - (void)nesView:(NESView*)nesView didDetectVsyncWithFrameCount:(NSInteger)frameCount
 {
     [nesView tick:_nesKey];
+}
+
+- (void)reset
+{
+    [_nesView reset];
 }
 
 - (void)didReceiveMemoryWarning

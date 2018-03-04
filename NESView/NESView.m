@@ -118,7 +118,9 @@
 
 - (void)reset
 {
+    [(NESLayer*)self.layer lockVram];
     NESEmulator_reset((void*)_context);
+    [(NESLayer*)self.layer unlockVram];
 }
 
 @end
