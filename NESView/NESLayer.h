@@ -15,4 +15,5 @@
 - (void)lockVram;
 - (void)unlockVram;
 - (void)drawFrame;
+- (UIImage*)capture;
 @end

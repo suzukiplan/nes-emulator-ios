@@ -43,8 +43,9 @@
 
 - (void)lockVram
 {
-    if (_destroyed)
+    if (_destroyed) {
         return;
+    }
     pthread_mutex_lock(&_mutex);
 }
 
@@ -55,20 +56,36 @@
 
 - (void)unlockVram
 {
-    if (_destroyed)
+    if (_destroyed) {
         return;
+    }
     pthread_mutex_unlock(&_mutex);
 }
 
 - (void)drawFrame
 {
-    if (_destroyed)
+    if (_destroyed) {
         return;
+    }
     [self lockVram];
     CGImageRef cgImage = CGBitmapContextCreateImage(_img);
     self.contents = (__bridge id)cgImage;
     [self unlockVram];
     CFRelease(cgImage);
+}
+
+- (UIImage*)capture
+{
+    if (_destroyed) {
+        return nil;
+    }
+    CGImageRef cgImage = CGBitmapContextCreateImage(_img);
+    if (!cgImage) {
+        return nil;
+    }
+    UIImage* uiImage = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
+    return uiImage;
 }
 
 - (void)destroy

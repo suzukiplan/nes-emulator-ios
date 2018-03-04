@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)tick:(NESKey*)key;
 - (void)ticks:(NSArray<NESKey*>*)keys count:(NSInteger)count;
 - (void)reset;
+- (UIImage*)capture;
 - (void)destroy;
 - (nullable NSData*)saveState;
 - (BOOL)loadState:(nullable NSData*)state;

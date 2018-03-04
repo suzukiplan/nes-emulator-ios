@@ -106,6 +106,14 @@
     [self _copyVram];
 }
 
+- (UIImage*)capture
+{
+    [(NESLayer*)self.layer lockVram];
+    UIImage* image = [(NESLayer*)self.layer capture];
+    [(NESLayer*)self.layer unlockVram];
+    return image;
+}
+
 - (void)_copyVram
 {
     [(NESLayer*)self.layer lockVram];
