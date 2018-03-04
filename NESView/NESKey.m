@@ -33,7 +33,7 @@
     return self;
 }
 
-- (NSInteger)getCode
+- (NSInteger)code
 {
     NSInteger code1 = _player1.up ? MASK_UP : 0;
     code1 += _player1.down ? MASK_DOWN : 0;
